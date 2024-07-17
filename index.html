@@ -3,7 +3,8 @@
   <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <meta name="generator" content="PhpSpreadsheet, https://github.com/PHPOffice/PhpSpreadsheet">
-      <title>Untitled Spreadsheet</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Список пищевых добавок</title>
       <meta name="author" content="Unknown Creator" />
       <meta name="title" content="Untitled Spreadsheet" />
       <meta name="company" content="Microsoft Corporation" />
@@ -743,31 +744,56 @@
       table.sheet0 tr.row498 { height:18pt }
       table.sheet0 tr.row499 { height:18pt }
       table.sheet0 tr.row500 { height:18pt }
-      .search-container {
+     .search-container {
             margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
         }
         .search-input {
             padding: 10px;
             font-size: 16px;
+            flex: 1;
+            min-width: 200px;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
         .search-button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            margin-bottom: 10px;
         }
         .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
             padding: 10px 20px;
             background-color: #000;
             color: #fff;
             cursor: pointer;
             border-radius: 5px;
-            display: none;
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Позиционирование фиксировано */
+            bottom: 20px; /* Расположено внизу экрана */
+            right: 20px; /* Расположено справа экрана */
+            z-index: 100; /* Поверх остальных элементов */
         }
         .highlight {
             background-color: yellow;
+        }
+        @media (max-width: 600px) {
+            .search-button {
+                width: 100%;
+                margin-right: 0;
+            }
+            .search-input {
+                width: 100%;
+                margin-right: 0;
+            }
+            th, td {
+                padding: 6px 8px;
+            }
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
   </head>
